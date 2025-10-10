@@ -338,7 +338,6 @@ export REDIS_DATABASE="1"
 # 应用会自动检测 Redis 配置并优先使用 Redis 存储
 python web.py
 ```
-
 ### 🐘 Postgres 分布式存储模式
 
 如果未配置 Redis，或者你希望使用关系型数据库作为主要存储方案，gcli2api 也支持 Postgres（位于 Redis 之后，优先于 MongoDB）。
