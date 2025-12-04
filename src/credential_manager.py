@@ -622,13 +622,13 @@ class CredentialManager:
                 if file_expiry.tzinfo is None:
                     file_expiry = file_expiry.replace(tzinfo=timezone.utc)
 
-                # 检查是否还有至少5分钟有效期
+                # 检查是否还有至少10分钟有效期
                 now = datetime.now(timezone.utc)
                 time_left = (file_expiry - now).total_seconds()
 
                 log.debug(f"Token剩余时间: {int(time_left/60)}分钟")
 
-                if time_left > 300:  # 5分钟缓冲
+                if time_left > 600:  # 10分钟缓冲
                     return False
                 else:
                     log.debug(f"Token即将过期（剩余{int(time_left/60)}分钟），需要刷新")
