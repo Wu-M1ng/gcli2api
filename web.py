@@ -162,9 +162,9 @@ async def main():
     config.max_request_body_size = 100 * 1024 * 1024
 
     # 设置连接超时
-    config.keep_alive_timeout = 300  # 5分钟
-    config.read_timeout = 300  # 5分钟读取超时
-    config.write_timeout = 300  # 5分钟写入超时
+    config.keep_alive_timeout = 600  # 10分钟
+    config.read_timeout = 600  # 10分钟读取超时
+    config.write_timeout = 600  # 10分钟写入超时
 
     # 增加启动超时时间以支持大量凭证的场景
     config.startup_timeout = 120  # 2分钟启动超时
